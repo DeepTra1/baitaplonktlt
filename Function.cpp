@@ -120,7 +120,7 @@ string canGiua1(const string& str, int width) {
 //// căn giữa số
 string canGiua2(double value, int width) {
     string str = to_string(value);
-    /// xóa các số 0 ở cuối và dấu chấm thập phân
+    /// xóa các số 0 ở cuối ( sau dấu chấm thập phân )
     str.erase(str.find_last_not_of('0') + 1, string::npos);
     if (str.back() == '.') str.pop_back();
     return canGiua1(str, width);
