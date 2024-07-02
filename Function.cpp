@@ -17,7 +17,7 @@ void Menu() {
     cout << "**       Nhap lua chon cua ban:            **\n";
 
 }
-
+//Menu mat hang
 void MenuQLMH() {
     cout << "***********************************************\n";
     cout << "**             MENU QUAN LY MAT HANG         **\n";
@@ -34,7 +34,7 @@ void MenuQLMH() {
     cout << "**         Nhap lua chon cua ban:            **\n";
 
 }
-
+//Menu hoa don
 void MenuQLHD() {
     cout << "***************************************************\n";
     cout << "**       MENU QUAN LY HOA DON                    **\n";
@@ -49,7 +49,7 @@ void MenuQLHD() {
     cout << "**       Nhap lua chon cua ban:                  **\n";
 }
 
-
+// Menu sua san pham
 void MenuSua() {
     cout << "*********************************************\n";
     cout << "**       Ban muon sua thong tin gi         **\n";
@@ -64,6 +64,7 @@ void MenuSua() {
     cout << "*********************************************\n";
     cout << "**       Nhap lua chon cua ban:            **\n";
 }
+//Menu sua hoa don
 void MenuSuaHD() {
     cout << "**************************************************\n";
     cout << "**       Ban muon sua thong tin gi              **\n";
@@ -74,7 +75,7 @@ void MenuSuaHD() {
     cout << "**************************************************\n";
     cout << "**       Nhap lua chon cua ban:                 **\n";
 }
-
+// Menu sap xep gia
 void MenuSapXepGia() {
     cout << "*********************************************\n";
     cout << "**       Ban muon sap xep san pham ?       **\n";
@@ -84,7 +85,7 @@ void MenuSapXepGia() {
     cout << "*********************************************\n";
     cout << "**       Nhap lua chon cua ban:            **\n";
 }
-
+// Ham them san pham
 void ThemSanPham()
 {
     sanPham sp;
@@ -108,7 +109,7 @@ void ThemSanPham()
     cout << "Da them thanh cong! " << endl;
 }
 
-// c?n gi?a 1 chu?i
+//// căn giữa 1 chuỗi
 string canGiua1(const string& str, int width) {
     int khoangTrang = width - str.size();
     int left = khoangTrang / 2;
@@ -116,21 +117,21 @@ string canGiua1(const string& str, int width) {
     return (string(left, ' ') + str + string(right, ' '));
 }
 
-// c?n gi?a s?
+//// căn giữa số
 string canGiua2(double value, int width) {
     string str = to_string(value);
-    // x�a c�c s? 0 ? cu?i v� d?u ch?m th?p ph�n 
+    /// xóa các số 0 ở cuối và dấu chấm thập phân
     str.erase(str.find_last_not_of('0') + 1, string::npos);
     if (str.back() == '.') str.pop_back();
     return canGiua1(str, width);
 }
 
 
-
+// In ra danh sach san pham
 void InListSp(const vector<sanPham>& ds)
 {
     const int width = 12;
-    // In ti�u ?? 
+    // In tiêu đề 
     cout << "+-----+------------+------------------+------------+----------------+--------------------+------------+------------+" << std::endl;
     cout << "| " << canGiua1("STT", 4) << "|"
         << canGiua1("Code", width) << "|"
@@ -142,7 +143,7 @@ void InListSp(const vector<sanPham>& ds)
         << canGiua1("Output Price", width) << "|" << std::endl;
     cout << "+-----+------------+------------------+------------+----------------+--------------------+------------+------------+" << std::endl;
 
-    // In th�ng tin
+    // In thông tin
     int i = 1;
     for (const auto& sanPham : ds) {
         cout << "| " << canGiua1(to_string(i), 4) << "|"
@@ -161,10 +162,10 @@ void InListSp(const vector<sanPham>& ds)
 void InListSp1() {
     InListSp(listSP);
 }
-
+// Ham main khong goi duoc tham so nen dung ham nay de in
 void InSP(sanPham sp) {
     const int width = 12;
-    // In ti�u ?? 
+    // In tiêu đề
     cout << "+-----+------------+------------------+------------+----------------+--------------------+------------+------------+" << std::endl;
     cout << "| " << canGiua1("STT", 4) << "|"
         << canGiua1("Code", width) << "|"
@@ -176,7 +177,7 @@ void InSP(sanPham sp) {
         << canGiua1("Output Price", width) << "|" << std::endl;
     cout << "+-----+------------+------------------+------------+----------------+--------------------+------------+------------+" << std::endl;
 
-    // In th�ng tin
+    // In thông tin
     cout << "| " << canGiua1(to_string(1), 4) << "|"
         << canGiua1(sp.maSP, width) << "|"
         << canGiua1(sp.tenSP, 18) << "|"
@@ -189,7 +190,7 @@ void InSP(sanPham sp) {
 
 
 }
-
+//Tim vi tri cua san pham co ma la xxx
 int find_vitri_maSP(string maSP) {
     int i = 0;
     for (const auto& sp : listSP) {
@@ -200,7 +201,7 @@ int find_vitri_maSP(string maSP) {
         return -1;
 
 }
-
+// Sua san pham theo ma
 void SuaMaSanPham() {
     string maSP;
     cout << "Nhap vao ma san pham can sua: ";
@@ -215,7 +216,7 @@ void SuaMaSanPham() {
     listSP[find_vitri_maSP(maSP)] = sp;
     cout << "\nSua ma san pham thanh cong! ";
 }
-
+// Sua san pham theo ten
 void SuaTenSanPham() {
     string maSP;
     cout << "Nhap vao ma san pham can sua: ";
@@ -230,7 +231,7 @@ void SuaTenSanPham() {
     listSP[find_vitri_maSP(maSP)] = sp;
     cout << "\nSua ten san pham thanh cong! ";
 }
-
+// Sua so luong san pham
 void SuaSoLuong() {
     string maSP;
     cout << "Nhap vao ma san pham can sua: ";
@@ -245,7 +246,7 @@ void SuaSoLuong() {
     listSP[find_vitri_maSP(maSP)] = sp;
     cout << "\nSua so luong san pham thanh cong! ";
 }
-
+// Sua gia nhap san pham
 void SuaGiaNhap() {
     string maSP;
     cout << "Nhap vao ma san pham can sua: ";
@@ -260,7 +261,7 @@ void SuaGiaNhap() {
     listSP[find_vitri_maSP(maSP)] = sp;
     cout << "\nSua gia nhap thanh cong! ";
 }
-
+// Sua gia ban san pham
 void SuaGiaBan() {
     string maSP;
     cout << "Nhap vao ma san pham can sua: ";
@@ -275,7 +276,7 @@ void SuaGiaBan() {
     listSP[find_vitri_maSP(maSP)] = sp;
     cout << "\nSua gia ban thanh cong! ";
 }
-
+// Sua size giay
 void SuaSize() {
     string maSP;
     cout << "Nhap vao ma san pham can sua: ";
@@ -290,7 +291,7 @@ void SuaSize() {
     listSP[find_vitri_maSP(maSP)] = sp;
     cout << "\nSua size san pham thanh cong! ";
 }
-
+// Sua mau giay
 void SuaMauSac() {
     string maSP;
     cout << "Nhap vao ma san pham can sua: ";
@@ -305,7 +306,7 @@ void SuaMauSac() {
     listSP[find_vitri_maSP(maSP)] = sp;
     cout << "\nSua mau san pham thanh cong! ";
 }
-
+// Xoa san pham
 void XoaSanPham() {
     string maSP;
     cout << "Nhap ma san pham can xoa: ";
@@ -330,7 +331,7 @@ void XoaSanPham() {
     nSanPham = listSP.size();
     cout << "Da xoa mat hang co ma: " << sp.maSP << " khoi danh sach. \n";
 }
-
+// Tim kiem san pham theo ma
 void TimKiemTheoMa() {
     string maSP;
     cout << "Nhap ma san pham can tim: ";
@@ -343,7 +344,7 @@ void TimKiemTheoMa() {
     sanPham sp = listSP[find_vitri_maSP(maSP)];
     InSP(sp);
 }
-
+// Kiem tra xem co ton tai chuoi xxx trong ten san pham khong
 bool KiemtraChuoicon(const string& subStr, const string& str) {
     if (subStr.length() > str.length()) return false;
     if (subStr.empty()) return true; // chuoi rong
@@ -358,7 +359,7 @@ bool KiemtraChuoicon(const string& subStr, const string& str) {
     }
     return false;
 }
-
+//Tim kiem san pham theo chuoi ki tu goi y
 void TimKiemTheoTen() {
     string tenSP;
     cout << "Nhap vao ten goi y: ";
@@ -371,7 +372,7 @@ void TimKiemTheoTen() {
     }
     InListSp(listKQ);
 }
-
+// Tim kiem san pham tren khoang gia ban
 void TimKiemTrenKhoangGiaBan() {
     double from, to;
     vector<sanPham> listKQ;
@@ -385,13 +386,13 @@ void TimKiemTrenKhoangGiaBan() {
     }
     InListSp(listKQ);
 }
-
+//Doi vi tri 2 san pham cho nhau
 void swapSp(sanPham& a, sanPham& b) {
     sanPham tmp = a;
     a = b;
     b = tmp;
 }
-
+//Sap sep gia san pham tang dan
 void SapXepGiaTangDan() { // Selection Sort
     vector<sanPham> listKQ = listSP;
     for (int i = 0; i < listKQ.size() - 1; i++) {
@@ -405,7 +406,7 @@ void SapXepGiaTangDan() { // Selection Sort
     }
     InListSp(listKQ);
 }
-
+// Sap xep gia san pham giam dan
 void SapXepGiaGiamDan() { // Selection Sort
     vector<sanPham> listKQ = listSP;
     for (int i = 0; i < listKQ.size() - 1; i++) {
