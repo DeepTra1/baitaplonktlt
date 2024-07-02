@@ -392,7 +392,7 @@ void swapSp(sanPham& a, sanPham& b) {
     a = b;
     b = tmp;
 }
-//Sap sep gia san pham tang dan
+//Sap xep gia san pham tang dan
 void SapXepGiaTangDan() { // Selection Sort
     vector<sanPham> listKQ = listSP;
     for (int i = 0; i < listKQ.size() - 1; i++) {
