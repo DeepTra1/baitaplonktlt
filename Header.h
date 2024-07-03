@@ -2,8 +2,6 @@
 #include<iostream>
 #include<string>
 #include<vector>
-#include<iomanip>
-#include<cstdlib>
 #include<cctype>
 #include<fstream>
 using namespace std;
