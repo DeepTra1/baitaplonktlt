@@ -103,7 +103,8 @@ void ThemSanPham()
     cout << "Nhap size giay: ";
     cin >> sp.size;
     cout << "Nhap mau sac cua giay: ";
-    cin >> sp.mauSac;
+    cin.ignore();
+    getline(cin,sp.mauSac);
     listSP.push_back(sp);
     nSanPham += 1;
     cout << "Da them thanh cong! " << endl;
