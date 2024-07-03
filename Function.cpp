@@ -440,7 +440,6 @@ void inListHoaDon1() {
 void themHoaDon() {
     hoaDon newHD;
     cout << "Nhap ma hoa don: \n";
-    cin.ignore();
     getline(cin, newHD.maHD);
     cout << "Nhap nam: \n";
     cin >> newHD.ngaynhapDon.nam;
@@ -467,7 +466,6 @@ int findHoaDon(string maHD) {
 void suaNgayHoaDon() {
     string maHD;
     cout << "Nhap vao ma hoa don can sua: ";
-    cin.ignore();
     getline(cin, maHD);
     if (findHoaDon(maHD) == -1) {
         cout << "Khong ton tai hoa don nay";
@@ -487,7 +485,6 @@ void suaNgayHoaDon() {
 void suaSoSPHoaDon() {
     string maHD;
     cout << "Nhap vao ma hoa don can sua: ";
-    cin.ignore();
     getline(cin, maHD);
     if (findHoaDon(maHD) == -1) {
         cout << "Khong ton tai hoa don nay";
@@ -502,7 +499,6 @@ void suaSoSPHoaDon() {
 void suaTongGiaTriHoaDon() {
     string maHD;
     cout << "Nhap vao ma hoa don can sua: ";
-    cin.ignore();
     getline(cin, maHD);
     if (findHoaDon(maHD) == -1) {
         cout << "Khong ton tai hoa don nay";
@@ -517,7 +513,6 @@ void suaTongGiaTriHoaDon() {
 void xoaHoaDon() {
     string NewmaHD;
     cout << "Nhap ma hoa don can xoa: ";
-    cin.ignore();
     getline(cin, NewmaHD);
     if (findHoaDon(NewmaHD) == -1) {
         cout << "Khong ton tai ma hoa don!";
@@ -543,7 +538,6 @@ void xuatHoaDon() {
 
     string maHD;
     cout << "Nhap vao ma hoa don can xuat: ";
-    cin.ignore();
     getline(cin, maHD);
     if (findHoaDon(maHD) == -1) {
         cout << "Khong ton tai hoa don nay";
